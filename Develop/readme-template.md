@@ -17,3 +17,6 @@
 
 ## License
 {license}
+${renderLicenseSection(data.license)}
+${renderLicenseLink(data.license)}
+${data.licenseBadge}
