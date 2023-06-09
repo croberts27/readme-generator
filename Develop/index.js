@@ -36,8 +36,15 @@ const questions = [
   },
   {
     name: "license",
-    type: "input",
+    type: "list",
     message: "Please include the license you are using for your README",
+    choices: [
+        "Apache",
+        "GNU",
+        "MIT",
+        "Creative Commons",
+        "Boost"
+    ]
   },
 ];
 
