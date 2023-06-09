@@ -50,19 +50,21 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(answers) {
-  const template = fs.readFileSync('readme-template.md', 'utf8');
-  const { title, description, install, usage, tableOfContents, credits, license } = answers;
-  const readmeContent = template
-    .replace('{title}', title)
-    .replace('{description}', description)
-    .replace('{install}', install)
-    .replace('{usage}', usage)
-    .replace('{tableOfContents}', tableOfContents)
-    .replace('{credits}', credits)
-    .replace('{license}', license);
-
-  return readmeContent;
-}
+    const template = fs.readFileSync('readme-template.md', 'utf8');
+    const { title, description, install, usage, tableOfContents, credits, license } = answers;
+    const readmeContent = template
+      .replace('{title}', title)
+      .replace('{description}', description)
+      .replace('{install}', install)
+      .replace('{usage}', usage)
+      .replace('{tableOfContents}', tableOfContents)
+      .replace('{credits}', credits)
+      .replace('{license}', license)
+      .replace('{licenseBadge}', renderLicenseBadge(license)); // Added this line for badge to show up
+  
+    return readmeContent;
+  }
+  
 
 // TODO: Create a function to initialize app
 function init() {
