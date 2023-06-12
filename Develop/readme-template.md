@@ -15,8 +15,11 @@
 ## Credits
 {credits}
 
+## Tests
+{tests}
+
 ## License
 {license}
 ${renderLicenseSection(data.license)}
 ${renderLicenseLink(data.license)}
-${data.licenseBadge}
+${renderLicenseBadge(data.license)}

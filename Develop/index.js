@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const renderLicenseBadge = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 
 // TODO: Create an array of questions for user input
@@ -37,6 +37,26 @@ const questions = [
     message: "List your collaborators, if any, and links to any third-party assets, tutorials, or documentation",
   },
   {
+    name: "tests",
+    type: "input",
+    message: "Test Instructions:"
+  },
+  {
+    name: "gitUsername",
+    type: "input",
+    message: "Github Username:"
+  },
+  {
+    name: "email",
+    type: "input",
+    message: "Email Address:"
+  },
+  {
+    name: "contribution",
+    type: "input",
+    message: "Contribution Guidelines:"
+  },
+  {
     name: "license",
     type: "list",
     message: "Please include the license you are using for your README",
@@ -48,37 +68,29 @@ const questions = [
         "Boost"
     ]
   },
+  
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(answers) {
-    const template = fs.readFileSync('readme-template.md', 'utf8');
-    const { title, description, install, usage, tableOfContents, credits, license } = answers;
-    const readmeContent = template
-    .replace('{title}', title)
-    .replace('{description}', description)
-    .replace('{install}', install)
-    .replace('{usage}', usage)
-    .replace('{tableOfContents}', tableOfContents)
-    .replace('{credits}', credits)
-    .replace('{license}', license)
-    .replace('{licenseBadge}', renderLicenseBadge(license)); // Added this line for badge to show up
-  
-    return readmeContent;
-  }
-  
 
-// TODO: Create a function to initialize app
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+    }); 
+
+}
+
+const userInput = (answers) => {
+  console.log(answers);
+  writeToFile('README.md', generateMarkdown(answers));
+}
+
 function init() {
-    inquirer
-      .prompt(questions)
-      .then((answers) => {
-        const readmeContent = writeToFile(answers); // Pass the answers object to generateMarkdown
-        fs.writeFileSync('README.md', readmeContent);
-        console.log('README.md generated successfully!');
-      })
-      .catch((err) => console.error(err));
-  }
+  inquirer
+.prompt(questions).then(userInput);
+}
+
 
 // Function call to initialize app
 init();

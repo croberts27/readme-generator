@@ -9,9 +9,9 @@ function renderLicenseBadge(license) {
   } else if (license === 'GNU') {
     return '![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)';
   } else if (license === 'Apache') {
-    return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    return '[![License: Apache](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
   } else if (license === 'Boost') {
-    return '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+    return '[![License: Boost](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
   } else {
     return '';
   }
@@ -86,12 +86,15 @@ function generateMarkdown(data) {
   ## Usage
   
   ${data.usage}
+
+  ## Credits
+
+  ${data.credits}
   
   ## License
   
   ${renderLicenseSection(data.license)}
   ${renderLicenseLink(data.license)}
-  {licenseBadge}
   ${renderLicenseBadge(data.license)}
   
   ## How to Contribute
