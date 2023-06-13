@@ -80,14 +80,14 @@ function writeToFile(fileName, data) {
     }); 
 
 }
-
+// need a function for  user input
 const userInput = (answers) => {
   console.log(answers);
   writeToFile('README.md', generateMarkdown(answers));
 }
 
 function init() {
-  inquirer
+  inquirer // need to include inquirer here
 .prompt(questions).then(userInput);
 }
 
