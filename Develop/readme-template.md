@@ -1,4 +1,4 @@
-# {title}
+<!-- # {title}
 
 ## Description
 {description}
@@ -22,4 +22,4 @@
 {license}
 ${renderLicenseSection(data.license)}
 ${renderLicenseLink(data.license)}
-${renderLicenseBadge(data.license)}
+${renderLicenseBadge(data.license)} -->

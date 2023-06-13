@@ -20,26 +20,43 @@ function renderLicenseBadge(license) {
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
+// function renderLicenseLink(license) {
+//   if (license === 'MIT License') {
+//     return '(https://opensource.org/licenses/MIT)';
+//   }
+//   else if (license === 'Creative Commons') {
+//     return '(http://creativecommons.org/publicdomain/zero/1.0/)';
+//   }
+//   else if (license === 'GNU') {
+//     return '(https://www.gnu.org/licenses/gpl-3.0)';
+//   }
+//   else if (license === 'Apache') {
+//     return '(https://www.apache.org/licenses/LICENSE-2.0)';
+//   }
+//   else if (license === 'Boost') {
+//     return '(https://www.boost.org/users/license.html)';
+//   }
+//   else {
+//     return '';
+//   }
+// }
+// Updating code to include URL link
 function renderLicenseLink(license) {
   if (license === 'MIT License') {
-    return '(https://opensource.org/licenses/MIT)';
-  }
-  else if (license === 'Creative Commons') {
-    return '(http://creativecommons.org/publicdomain/zero/1.0/)';
-  }
-  else if (license === 'GNU') {
-    return '(https://www.gnu.org/licenses/gpl-3.0)';
-  }
-  else if (license === 'Apache') {
-    return '(https://www.apache.org/licenses/LICENSE-2.0)';
-  }
-  else if (license === 'Boost') {
-    return '(https://www.boost.org/users/license.html)';
-  }
-  else {
+    return '[MIT License](https://opensource.org/licenses/MIT)';
+  } else if (license === 'Creative Commons') {
+    return '[Creative Commons](http://creativecommons.org/publicdomain/zero/1.0/)';
+  } else if (license === 'GNU') {
+    return '[GNU](https://www.gnu.org/licenses/gpl-3.0)';
+  } else if (license === 'Apache') {
+    return '[Apache](https://www.apache.org/licenses/LICENSE-2.0)';
+  } else if (license === 'Boost') {
+    return '[Boost](https://www.boost.org/users/license.html)';
+  } else {
     return '';
   }
 }
+
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string

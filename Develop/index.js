@@ -61,13 +61,14 @@ const questions = [
     type: "list",
     message: "Please include the license you are using for your README",
     choices: [
-        "Apache",
-        "GNU",
-        "MIT",
-        "Creative Commons",
-        "Boost"
+      "Apache",
+      "GNU",
+      "MIT License", // Update the choice to 'MIT License'
+      "Creative Commons",
+      "Boost"
     ]
   },
+  
   
 ];
 
