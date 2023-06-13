@@ -83,7 +83,7 @@ function writeToFile(fileName, data) {
 // need a function for  user input
 const userInput = (answers) => {
   console.log(answers);
-  writeToFile('README.md', generateMarkdown(answers));
+  writeToFile('SampleREADME.md', generateMarkdown(answers));
 }
 
 function init() {
